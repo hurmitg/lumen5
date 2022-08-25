@@ -22,17 +22,21 @@ const links = [
 function Navbar() {
 
     return (
-        <Flex position="sticky" top="-20px" bg="white" w="100%" p="20px 10% 10px 10%" direction="row" h="18vh" justifyContent="space-between" alignItems="center" zIndex="100">
+        <Flex position="sticky" top="-20px" bg="white" w="100%" p="20px 5% 10px 5%" direction="row" h="18vh" justifyContent="space-between" alignItems="center" zIndex="100">
 
             <Flex h="60%" >
-              <Image h="100%" src="https://storage.googleapis.com/lumen5-site-images/L5-logo/L5-logo-color-default.svg"/>
+              <Link to="/"><Image  h="100%" src="https://storage.googleapis.com/lumen5-site-images/L5-logo/L5-logo-color-default.svg"/></Link>
             </Flex>
 
             <Flex fontSize="large" h="65%" justifyContent="space-between" alignItems="center">
-              <Text m="15px">Pricing</Text>
-              <Text m="15px">Enterprise</Text>
-              <Button m="10px" p="25px 20px" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline'>Login</Button> 
-              <Button m="10px" p="25px 20px" color="white" bg="#5846f5" variant='solid' borderRadius="30px">Sign Up</Button>
+              <Link to="/pricing"><Text m="15px">Pricing</Text></Link>
+              <Link to="/enterprise"><Text m="15px">Enterprise</Text></Link>
+              <Link to="/login ">
+                <Button m="10px" p="25px 20px" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline' _hover={{bg:"#5846f5", color : "white"}}>Login</Button> 
+              </Link>
+              <Link to="/signup">
+                <Button m="10px" p="25px 20px" color="white" bg="#5846f5" variant='solid' borderRadius="30px" _hover={{bg:"#4636c5"}}>Sign Up</Button>
+              </Link>
             </Flex>
 
             

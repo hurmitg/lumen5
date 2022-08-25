@@ -1,4 +1,5 @@
 import { AspectRatio, 
+            Avatar, 
             Box, 
             Button, 
             Center, 
@@ -11,7 +12,9 @@ import { AspectRatio,
             Text } from "@chakra-ui/react";
             import HoverVideoPlayer from 'react-hover-video-player';
 import { Link } from "react-router-dom";
-
+import Footer from "../Components/Footer";
+import ImageTextCard from "../Components/ImageTextCard";
+import SignupBox from "../Components/SignupBox";
 
 export default function HomePage(){
 
@@ -34,14 +37,51 @@ export default function HomePage(){
         
     ]
 
+    const cards = [
+        {
+            left : true,
+            image : "https://storage.googleapis.com/lumen5-site-images/website-assets/image-content.png",
+            heading : "Transform blog posts into videos with A.I.",
+            content : "Starting from a blank page is hard — and with Lumen5, you don’t have to. Our AI-powered technology helps you storyboard your ideas, fit your content to a layout, and find music and visuals that enhance your message.",
+            link : "Get started for free →",
+            linkAdress : "/signup",
+            review : 
+                {
+                    content : "“Lumen5 has enabled us to create more videos and drive more traffic, while having more time to invest in other projects.”",
+                    avatar :  "https://storage.googleapis.com/lumen5-site-images/website-assets/image-drew-s.jpg",
+                    name : "Drew Sykes, ",
+                    post : "Social Media Director",
+                    brand : "https://storage.googleapis.com/lumen5-site-images/website-assets/logo-nc-red.png"
+                },
+    
+        },
+        {
+            left : false,
+            image : "https://storage.googleapis.com/lumen5-site-images/website-assets/image-media.png",
+            heading : "Content library with millions of stock photos & videos",
+            content : "The Lumen5 media library gives you easy access to millions of photos, video clips, and audio files, so you always have the elements you need to create the perfect video.",
+            link : " View plans →",
+            linkAdress : "/pricing",
+            review : 
+                {
+                    content : "“We promoted our downloadable study on top PPC skills for 2019 on social media using a short video created in Lumen5 in just 30 minutes, and decreased cost per download by 5x!”",
+                    avatar : "https://storage.googleapis.com/lumen5-site-images/website-assets/image-julia-o.jpg",
+                    name : "Julia Olennikova, ",
+                    post : "Product Marketing Manager",
+                    brand : "https://storage.googleapis.com/lumen5-site-images/website-assets/logo-semrush.png"
+                },
+    
+        }
+    ]
+
     return (
-        <Flex direction="column" w="100%" alignItems="center">
+        <Flex direction="column" w="100%" mt="30px" alignItems="center">
           
-            <Flex m="30px 0px" w="80%" >
+            <Flex m="30px 0px" w="70%" >
                 <Flex direction="column" w="40%" textAlign="left" alignItems="flex-start" justifyContent="space-between">
                     <Text fontWeight="700" fontSize='4xl'>Video maker built to supercharge your content strategy</Text>
-                    <Text fontSize='3xl'>Easily make videos for content marketing, thought leadership, and brand awareness in a snap.</Text>
-                    <Button m="10px" p="30px 20px" color="white" bg="#5846f5" variant='solid' borderRadius="30px">Sigun Up Free</Button>
+                    <Text w="80%" fontSize='xl'>Easily make videos for <b> content marketing, thought leadership, and brand awareness </b> in a snap.</Text>
+                    <Link to="/signup"><Button m="10px" p="30px 20px" color="white" bg="#5846f5" variant='solid' borderRadius="30px">Sigun Up Free</Button></Link>
                 </Flex>
                 <Spacer/>
                 <Image w="50%" src="https://storage.googleapis.com/lumen5-site-images/website-assets/image-hero.png" />
@@ -159,36 +199,29 @@ export default function HomePage(){
 
             </Grid>
 
-            <Flex m="30px 0px" p="0% 10%" bg="#fafafb" w="100%"  alignItems="center">
-                
-                <Image h="80vh" src="https://storage.googleapis.com/lumen5-site-images/website-assets/image-content.png" />
-                <Spacer/>
+            <ImageTextCard
+                data={cards[0]} 
+                key={1234} />
 
-                <Flex direction="column" w="40%" textAlign="left" alignItems="flex-start" justifyContent="space-between" p="40px 0px">
-                    <Text fontWeight="700" fontSize='4xl' p="20px 0px">Transform blog posts into videos with A.I.</Text>
-                    <Text p="20px 0px" fontSize='lg'>Starting from a blank page is hard — and with Lumen5, you don’t have to. Our AI-powered technology helps you storyboard your ideas, fit your content to a layout, and find music and visuals that enhance your message.</Text>
-                    <Link color="blue" to="/signup"><Text color="blue" fontSize="md"> Get started for free →</Text></Link>
-
-                    <Box p="20px 0px" w="100%" borderBottom="1px solid grey"></Box>
-
-                    <Flex direction="column" w="80%" m="30px 0px">
-                        <Text p="20px 0px" fontSize="sm">“Lumen5 has enabled us to create more videos and drive more traffic, while having more time to invest in other projects.”</Text>
-
-                        <Flex p="20px 0px" w="100%" justifyContent="space-between" alignItems="center">
-                            <Image w="50px" h="50px" borderRadius="full" src="https://storage.googleapis.com/lumen5-site-images/website-assets/image-drew-s.jpg"/>
-                            <Box>
-                                <Text p="5px 0px"><b>Drew Sykes, </b>Social Media Director</Text>
-                                <Image w="90px" src="https://storage.googleapis.com/lumen5-site-images/website-assets/logo-nc-red.png"/>                            
-                            </Box>
-                        </Flex>
-
-                    </Flex>
-                </Flex>
-                
-                
-            </Flex>
+            <ImageTextCard
+                data={cards[1]} 
+                key={1234} />
 
 
+            
+            <SignupBox />
+            <Footer />
         </Flex>
     )
 }
+
+
+
+
+
+
+
+
+
+
+// https://storage.googleapis.com/lumen5-site-images/website-assets/cta-bg.png
