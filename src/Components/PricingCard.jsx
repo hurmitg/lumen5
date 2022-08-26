@@ -36,7 +36,7 @@ export default function PricingCard ({plan}){
                     
                     <Flex p="20px 10px" h="200px" direction="column">
                         {plan.features.map((feature)=>{
-                            return <Text pb="5px" fontSize="xs"> <span style={{color:"#83cc00", fontWeight:"900"}}> ✓ </span> {feature}</Text>
+                            return <Text key={feature} pb="5px" fontSize="xs"> <span style={{color:"#83cc00", fontWeight:"900"}}> ✓ </span> {feature}</Text>
                         })}
                     </Flex>
 

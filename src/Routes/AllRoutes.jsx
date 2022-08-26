@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "../Components/PrivateRoute";
+import Dashboard from "./Dashboard";
 import Enterprise from "./Enterprise";
 import HomePage from "./HomePage";
 import Login from "./Login";
@@ -21,6 +22,7 @@ function AllRoutes() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/enterprise" element={<Enterprise />} />
+      <Route path="/dashboard/:page" element={<Dashboard />} />
 
     </Routes>
   );

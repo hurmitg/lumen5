@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 import PricingCard from "../Components/PricingCard";
 import SignupBox from "../Components/SignupBox";
 
@@ -79,6 +80,7 @@ const prices = [
 ]
     return (
         <>
+        <Navbar />
         <Flex direction="column" w="100%" mt="30px" alignItems="center">
           <Text fontSize="xl">PRICING</Text>
           <Text w="50%" fontWeight="600" fontSize="4xl">Plans for your video content creation strategy</Text>

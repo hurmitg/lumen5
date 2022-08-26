@@ -1,0 +1,23 @@
+.active {
+  margin: 10px 0;
+  font-weight: 600;
+  padding: 20px;
+  background-color: #fafafb;
+  color: blue;
+  text-align: left;
+}
+  
+.default {
+  margin: 10px 0;
+  color: black;
+  padding: 20px;
+  text-align: left;
+}
+
+.default:hover{
+  background-color: #fafafb;
+}
+
+.active:hover{
+  background-color: #f0f0f4;
+}
