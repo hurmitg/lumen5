@@ -1,12 +1,16 @@
 import { Box, Button, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { useContext } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import PricingCard from "../Components/PricingCard";
 import SignupBox from "../Components/SignupBox";
+import { AuthContext } from "../Context/AuthContext";
+import { DashboardNav } from "./Dashboard";
 
 
 export default function Pricing(){
 
+  const {isAuth} = useContext(AuthContext);
   
 const prices = [
   {
@@ -80,7 +84,9 @@ const prices = [
 ]
     return (
         <>
-        <Navbar />
+
+        { isAuth ? <><DashboardNav /></> : <Navbar />}
+
         <Flex direction="column" w="100%" mt="30px" alignItems="center">
           <Text fontSize="xl">PRICING</Text>
           <Text w="50%" fontWeight="600" fontSize="4xl">Plans for your video content creation strategy</Text>
@@ -94,10 +100,11 @@ const prices = [
               })}
           </Grid>
         </Flex>
+        { isAuth ? <></> : <SignupBox />}
+        { isAuth ? <></> :<Footer />}
         
-        <SignupBox />
         
-      <Footer />
+      
         </>
     )
 }

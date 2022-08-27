@@ -1,4 +1,5 @@
 import { Avatar, Box, Button, Flex, Grid, GridItem, Image, Spacer, Text } from "@chakra-ui/react";
+import { useContext } from "react";
 import HoverVideoPlayer from 'react-hover-video-player';
 import { Link } from "react-router-dom";
 import BrandAd from "../Components/BrandAd";
@@ -7,6 +8,8 @@ import ImageTextCard from "../Components/ImageTextCard";
 import Navbar from "../Components/Navbar";
 import SignupBox from "../Components/SignupBox";
 import VideoGrid from "../Components/VideoGrid";
+import { AuthContext } from "../Context/AuthContext";
+import { DashboardNav } from "./Dashboard";
 
 
 export default function Enterprise(){
@@ -60,9 +63,11 @@ export default function Enterprise(){
         },
     ]
 
+    const {isAuth} = useContext(AuthContext);
+
     return ( 
         <>
-        <Navbar />
+        { isAuth ? <><DashboardNav /></> : <Navbar />}
 
         <Flex p="30px 15%" bg="#24282f" color="white" m="30px 0px" w="100%" >
                 <Flex direction="column" w="40%" textAlign="left" alignItems="flex-start" justifyContent="space-between">

@@ -3,9 +3,41 @@ import { BellIcon } from '@chakra-ui/icons'
 import { Link, NavLink, useParams } from "react-router-dom";
 import styled from "./Dashboard.module.css";
 import VideoGrid from "../Components/VideoGrid";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
+
+export function DashboardNav(){
+  
+  const {logoutUser, sub, email} = useContext(AuthContext);
+  return (
+    <Flex h="12vh" w="100%" p="20px" borderBottom="1px solid #dddee6" alignItems="center" justifyContent="space-between">
+    <Link to="/dashboard/all"><Image src="https://storage.googleapis.com/lumen5-site-images/L5-logo/L5-logo-color-default.svg" /></Link>
+    <Flex alignItems="center">
+    <Link to="/pricing"><Button p="15px 20px" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline' _hover={{bg:"#5846f5", color : "white"}}>{sub}</Button> </Link>
+
+    <Box h="10vh" m="0 20px" borderRight="1px solid #dddee6" ></Box>
+    
+    <BellIcon w="25px" h="25px" mr="20px" />
+
+    <Menu>
+      <MenuButton>
+        <Avatar w="30px" h="30px"></Avatar>
+      </MenuButton>
+      <MenuList>
+        <MenuItem _hover={{backgroundColor:"white"}}>{email}</MenuItem>
+        <MenuItem onClick={logoutUser}>Log out</MenuItem>    
+      </MenuList>
+    </Menu>
+
+    </Flex>
+</Flex>
+  )
+}
 
 export default function Dashboard (){
+
+
 
     const params = useParams();
 
@@ -25,30 +57,13 @@ export default function Dashboard (){
         
       ];
 
+    
+
+
     return (
         <>
-        <Flex h="12vh" w="100%" p="20px" borderBottom="1px solid #dddee6" alignItems="center" justifyContent="space-between">
-            <Image src="https://storage.googleapis.com/lumen5-site-images/L5-logo/L5-logo-color-default.svg" />
-            <Flex alignItems="center">
-            <Link to="/pricing"><Button p="15px 20px" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline' _hover={{bg:"#5846f5", color : "white"}}>Upgrade</Button> </Link>
-
-            <Box h="10vh" m="0 20px" borderRight="1px solid #dddee6" ></Box>
-            
-            <BellIcon w="25px" h="25px" mr="20px" />
-
-            <Menu>
-              <MenuButton>
-                <Avatar w="30px" h="30px"></Avatar>
-              </MenuButton>
-              <MenuList>
-                <MenuItem _hover={{backgroundColor:"white"}}>usermail@email.com</MenuItem>
-                <MenuItem>Log out</MenuItem>    
-              </MenuList>
-            </Menu>
-
-            </Flex>
-        </Flex>
-
+        
+        <DashboardNav />
         <Flex h="88vh" w="100%" > 
 
             <Flex w="20%" borderRight="1px solid #dddee6" direction="column" >
