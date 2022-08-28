@@ -2,7 +2,7 @@ import { Box, Button, Flex, GridItem, Text, useToast } from "@chakra-ui/react";
 import { useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
-
+// https://payment-kohl.vercel.app 
 
 export default function PricingCard ({plan}){
   const {isAuth, setSub} = useContext(AuthContext);
@@ -10,7 +10,13 @@ export default function PricingCard ({plan}){
 
   const handlePurchase = (title)=>{
 
-    if(isAuth) setSub(title);
+
+   
+    localStorage.setItem("sub", JSON.stringify(title))
+    if(isAuth){
+      setSub(title);
+      window.location.href = "https://payment-kohl.vercel.app/";
+    }
     else{
       toast({
         title: 'Please Login First !',
@@ -20,7 +26,6 @@ export default function PricingCard ({plan}){
         isClosable: true,
       }) 
     }
-
 
   }
     return(
@@ -49,7 +54,10 @@ export default function PricingCard ({plan}){
                                 plan.price==0 ? 
                                 <Link style={{width : "100%"}} to="/dashboard/all"><Button w="100%" p="25px 0" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline' _hover={{bg:"#5846f5", color : "white"}}>Get Started</Button></Link> :
 
-                                <Button onClick={()=>{handlePurchase(plan.title)}} w="100%" p="25px 0" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline' _hover={{bg:"#5846f5", color : "white"}}>Get Started</Button>
+                                
+                                // <Link style={{width:"100%"}} to="https://payment-kohl.vercel.app/">
+                                  <Button onClick={()=>{handlePurchase(plan.title)}} w="100%" p="25px 0" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline' _hover={{bg:"#5846f5", color : "white"}}>Get Started</Button>
+                                // </Link>
                         }
                     </Flex>
                     

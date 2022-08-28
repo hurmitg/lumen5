@@ -9,23 +9,25 @@ import { AuthContext } from "../Context/AuthContext";
 
 export function DashboardNav(){
   
+  let localUser = JSON.parse(localStorage.getItem("user")) || {};
   const {logoutUser, sub, email} = useContext(AuthContext);
+  let localSub = JSON.parse(localStorage.getItem("sub")) || sub;
   return (
     <Flex h="12vh" w="100%" p="20px" borderBottom="1px solid #dddee6" alignItems="center" justifyContent="space-between">
     <Link to="/dashboard/all"><Image src="https://storage.googleapis.com/lumen5-site-images/L5-logo/L5-logo-color-default.svg" /></Link>
     <Flex alignItems="center">
-    <Link to="/pricing"><Button p="15px 20px" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline' _hover={{bg:"#5846f5", color : "white"}}>{sub}</Button> </Link>
+    <Link to="/pricing"><Button p="15px 20px" colorScheme='blue' color="#5846f5" borderRadius="30px"  variant='outline' _hover={{bg:"#5846f5", color : "white"}}>{localSub || sub}</Button> </Link>
 
     <Box h="10vh" m="0 20px" borderRight="1px solid #dddee6" ></Box>
     
-    <BellIcon w="25px" h="25px" mr="20px" />
+    <BellIcon w="25px" h="25px" mr="20px" />  
 
     <Menu>
       <MenuButton>
         <Avatar w="30px" h="30px"></Avatar>
       </MenuButton>
       <MenuList>
-        <MenuItem _hover={{backgroundColor:"white"}}>{email}</MenuItem>
+        <MenuItem _hover={{backgroundColor:"white"}}>{localUser.email || email}</MenuItem>
         <MenuItem onClick={logoutUser}>Log out</MenuItem>    
       </MenuList>
     </Menu>

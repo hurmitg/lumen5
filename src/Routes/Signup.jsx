@@ -35,8 +35,6 @@ export default function Signup(){
                 duration: 5000,
                 isClosable: true,
               });
-            <Navigate to="/login" />
-            console.log(1)
 
             }
         ). catch((err) =>{
