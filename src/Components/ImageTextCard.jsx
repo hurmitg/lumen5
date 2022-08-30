@@ -15,9 +15,14 @@ export default function ImageTextCard({data}){
                     <Text fontWeight="700" fontSize='4xl' p="20px 0px">{data.heading}</Text>
                     <Text p="20px 0px" fontSize='lg'>{data.content}</Text>
 
-                    <Link color="blue" to={data.linkAdress}><Text color="blue" fontSize="md"> {data.link}</Text></Link>
+                    { data.link!== "" ? 
+                        <><Link color="blue" to={data.linkAdress}><Text color="blue" fontSize="md"> {data.link}</Text></Link>
+                        <Box p="20px 0px" w="100%" borderBottom="1px solid grey"></Box> </>
+                        : <></>
+                    }
+                    
 
-                    <Box p="20px 0px" w="100%" borderBottom="1px solid grey"></Box>
+                    
                     
                     { data.review !== ""? 
                         <Flex direction="column" w="80%" m="30px 0px">
@@ -45,9 +50,11 @@ export default function ImageTextCard({data}){
                     <Text fontWeight="700" fontSize='4xl' p="20px 0px">{data.heading}</Text>
                     <Text p="20px 0px" fontSize='lg'>{data.content}</Text>
 
-                    <Link color="blue" to={data.linkAdress}><Text color="blue" fontSize="md"> {data.link}</Text></Link>
-
-                    <Box p="20px 0px" w="100%" borderBottom="1px solid grey"></Box>
+                    { data.link!== "" ? 
+                        <><Link color="blue" to={data.linkAdress}><Text color="blue" fontSize="md"> {data.link}</Text></Link>
+                        <Box p="20px 0px" w="100%" borderBottom="1px solid grey"></Box> </>
+                        : <></>
+                    }
                     
                     { data.review !== ""? 
                         <Flex direction="column" w="80%" m="30px 0px">

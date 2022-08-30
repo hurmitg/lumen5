@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-// import styles from "./Navbar.module.css";
 import { Box, Button, Center, Flex, Image, Spacer, Text } from "@chakra-ui/react";
 const links = [
   {
@@ -42,26 +41,6 @@ function Navbar() {
             
         </Flex>
     )
-
-
-
-//   return (
-//     <div>
-//       {links.map((link) => (
-//         <NavLink
-//           // style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
-//           className={({ isActive }) =>
-//             isActive ? styles.active : styles.default
-//           }
-//           key={link.path}
-//           to={link.path}
-//         >
-//           {link.title}
-//         </NavLink>
-//       ))}
-//       <IsLoggedIn />
-//     </div>
-//   );
 }
 
 export default Navbar;
