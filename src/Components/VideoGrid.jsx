@@ -65,7 +65,7 @@ const videoData = [
 export default function VideoGrid({data=videoData, col=3}) {
 
     return (
-        <Grid templateRows='repeat(3, 1fr)' p="30px" w="90%" templateColumns={`repeat(${col}, 1fr)`} gap="30px 20px">
+        <Grid p="30px" w="90%" templateColumns={`repeat(${col}, 1fr)`} gap="30px 20px">
        
        {data.map((item)=>{
         return (
