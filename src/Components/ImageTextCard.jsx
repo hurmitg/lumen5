@@ -5,12 +5,12 @@ export default function ImageTextCard({data}){
 
     if(data.left)
     return (
-        <Flex m="30px 0px" p="0% 10%" bg="#fafafb" w="100%"  alignItems="center">
+        <Flex m="30px 0px" bg="#fafafb" padding="20px 30px" direction={["column", "row"]}  w="100%"  alignItems="center">
                 
-                <Image w="50%" objectFit="contain" src={data.image} />
+                <Image w={["90%", "50%"]} objectFit="contain" src={data.image} />
                 <Spacer/>
 
-                <Flex direction="column" w="40%" textAlign="left" alignItems="flex-start" justifyContent="space-between" p="40px 0px">
+                <Flex direction="column" w={["90%", "40%"]} textAlign={["center", "left"]} alignItems={[ "center", "flex-start" ]} justifyContent="space-between" p="40px 0px">
 
                     <Text fontWeight="700" fontSize='4xl' p="20px 0px">{data.heading}</Text>
                     <Text p="20px 0px" fontSize='lg'>{data.content}</Text>
@@ -43,9 +43,9 @@ export default function ImageTextCard({data}){
     ) 
 
     return (
-        <Flex m="30px 0px" p="0% 10%" bg="white" w="100%"  alignItems="center">
+        <Flex m="30px 0px" p="0% 10%" bg="white" w="100%" direction={["column", "row"]}   alignItems="center">
                 
-                <Flex direction="column" w="40%" textAlign="left" alignItems="flex-start" justifyContent="space-between" p="40px 0px">
+                <Flex direction="column" w={["90%", "40%"]} textAlign={["center", "left"]} alignItems={[ "center", "flex-start" ]} justifyContent="space-between" p="40px 0px">
 
                     <Text fontWeight="700" fontSize='4xl' p="20px 0px">{data.heading}</Text>
                     <Text p="20px 0px" fontSize='lg'>{data.content}</Text>
@@ -73,7 +73,7 @@ export default function ImageTextCard({data}){
                 </Flex>
 
                 <Spacer/>
-                <Image w="50%" objectFit="contain" src={data.image} />
+                <Image w={["90%", "50%"]} objectFit="contain" src={data.image} />
         </Flex>
     )
     
