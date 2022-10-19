@@ -9,9 +9,7 @@ export default function PricingCard ({plan}){
   const toast = useToast();
 
   const handlePurchase = (title)=>{
-
-
-   
+    
     localStorage.setItem("sub", JSON.stringify(title))
     if(isAuth){
       setSub(title);

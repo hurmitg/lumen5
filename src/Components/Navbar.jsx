@@ -51,42 +51,47 @@ function Navbar() {
       <Flex
         fontSize="large"
         h="65%"
-        justifyContent={["space-around","space-between"]}
+        mt={["10px", 0, 0]}
+        direction={["column", "row", "row"]}
+        justifyContent={["space-around", "space-between"]}
         alignItems="center"
-        flexWrap="wrap"
       >
-        <Link to="/pricing">
-          <Text m="15px">Pricing</Text>
-        </Link>
-        <Link to="/enterprise">
-          <Text m="15px">Enterprise</Text>
-        </Link>
-        <Link to="/login ">
-          <Button
-            m="10px"
-            p="25px 20px"
-            colorScheme="blue"
-            color="#5846f5"
-            borderRadius="30px"
-            variant="outline"
-            _hover={{ bg: "#5846f5", color: "white" }}
-          >
-            Login
-          </Button>
-        </Link>
-        <Link to="/signup">
-          <Button
-            m="10px"
-            p="25px 20px"
-            color="white"
-            bg="#5846f5"
-            variant="solid"
-            borderRadius="30px"
-            _hover={{ bg: "#4636c5" }}
-          >
-            Sign Up
-          </Button>
-        </Link>
+        <Box w={["100%", "50%", "50%"]}>
+          <Link to="/pricing">
+            <Text m="15px" display="inline">Pricing</Text>
+          </Link>
+          <Link to="/enterprise">
+            <Text m="15px" display="inline">Enterprise</Text>
+          </Link>
+        </Box>
+        <Flex w={["100%", "50%", "50%"]}>
+          <Link to="/login">
+            <Button
+              m="10px"
+              p="25px 20px"
+              colorScheme="blue"
+              color="#5846f5"
+              borderRadius="30px"
+              variant="outline"
+              _hover={{ bg: "#5846f5", color: "white" }}
+            >
+              Login
+            </Button>
+          </Link>
+          <Link to="/signup">
+            <Button
+              m="10px"
+              p="25px 20px"
+              color="white"
+              bg="#5846f5"
+              variant="solid"
+              borderRadius="30px"
+              _hover={{ bg: "#4636c5" }}
+            >
+              Sign Up
+            </Button>
+          </Link>
+        </Flex>
       </Flex>
     </Flex>
   );

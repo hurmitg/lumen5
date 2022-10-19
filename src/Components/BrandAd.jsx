@@ -14,7 +14,7 @@ export default function BrandAd() {
         Over 6 million videos created by thousands of businesses
       </Text>
 
-        <SimpleGrid
+      <SimpleGrid
           columns={[2, 4, 8]}
           spacing="15px"
           textAlign="left"

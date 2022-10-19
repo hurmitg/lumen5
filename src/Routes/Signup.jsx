@@ -54,9 +54,9 @@ export default function Signup(){
 
 
     return (
-        <Flex w="100%" h="100vh" >
+        <Flex w="100%" h="100vh" alignItems="center" direction={["column", "row", "row"]}>
             <LoginSideBox />
-            <Flex w="66%" direction="column" alignItems="center">
+            <Flex w={["100%", "100%","66%"]} mb={["20px", "20px", 0]} direction="column" alignItems="center">
                 <Text fontWeight='800' fontSize="4xl"> Get started with a free account </Text>
                 <FormControl w="70%" mt="40px">
 

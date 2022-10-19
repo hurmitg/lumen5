@@ -59,11 +59,11 @@ export default function Login(){
     } 
 
     return (
-            <Flex w="100%" h="100vh" >
+            <Flex w="100%" h="100vh" alignItems="center" direction={["column", "row", "row"]} >
                 <LoginSideBox />
-                <Flex w="66%" direction="column" alignItems="center">
+                <Flex w={["100%", "100%","66%"]} mb={["20px", "20px", 0]} direction="column" alignItems="center">
 
-                    <Text w="66%" textAlign="left" p="10px 0" fontWeight='800' fontSize="4xl">Welcome back!</Text>
+                    <Text w="66%"  textAlign="left" p="10px 0" fontWeight='800' fontSize="4xl">Welcome back!</Text>
                     
                     <FormControl w="70%" mt="40px" >
 
